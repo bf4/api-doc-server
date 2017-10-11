@@ -5,9 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+rails_version = '~> 5.1.4'
+# Specifing rails gem version for each gem prevents bundle update
+# from failing when e.g. a gem requires active_record >= x,
+# but that dependency isn't implicit in rails ~> x
+gem 'actionpack', rails_version
+gem 'activemodel', rails_version
+gem 'activerecord', rails_version
+gem 'activesupport', rails_version
+gem 'railties', rails_version
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,6 +39,3 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
