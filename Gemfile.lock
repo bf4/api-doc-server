@@ -40,6 +40,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    api_doc_server (1.0.1)
+      rails (>= 4.2, < 6)
     arel (8.0.0)
     bindex (0.5.0)
     builder (3.2.3)
@@ -149,6 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  api_doc_server
   byebug
   capybara (~> 2.13)
   listen (>= 3.0.5, < 3.2)
