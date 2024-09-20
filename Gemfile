@@ -16,7 +16,7 @@ gem 'activesupport', rails_version
 gem 'railties', rails_version
 
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 5.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
